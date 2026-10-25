@@ -194,9 +194,9 @@
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
-      <div class="badge badge-app">Приложение • Voice Assistant v1.0.9</div>
+      <div class="badge badge-app">Приложение • Voice Assistant v1.1.0</div>
       <h2>Gemini Voice Assistant</h2>
-      <div class="desc">Умный голосовой помощник на базе Google Gemini 2.0 Flash с распознаванием речи, звуковым подтверждением и голосовым озвучиванием.</div>
+      <div class="desc">Умный голосовой помощник на базе Google Gemini 2.0 Flash с распознаванием речи, звуковыми сигналами зуммера T-Rex 3 и вибро-откликом.</div>
 
       <div class="qr-box">
         <img src="gemini_qr.png" alt="Gemini Assistant QR Code">
@@ -204,16 +204,16 @@
 
       <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
 
-      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.0.9)</a>
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.1.0)</a>
 
       <div class="features">
-        <strong>Особенности обновления v1.0.9 (Анти-дребезг и аппаратные фиксы):</strong>
+        <strong>Особенности обновления v1.1.0 (Аппаратный зуммер и фикс микрофона):</strong>
         <ul>
-          <li>🛡️ <strong>Анти-дребезг кнопки SEL:</strong> защита от двойного срабатывания onKey и запрет преждевременной остановки записи (<1.5с)</li>
-          <li>🎤 <strong>Мгновенный захват аудио:</strong> старт микрофона с нулевой миллисекунды записи без пропусков речи</li>
-          <li>🔔 <strong>Вшитые MP3-бипы:</strong> гарантированная упаковка beep_start.mp3 и beep_stop.mp3 в assets/common</li>
-          <li>📳 <strong>Универсальная вибрация:</strong> двойной вызов (@zos/sensor + hmSensor fallback) с мощным импульсом 600мс</li>
-          <li>🌊 <strong>Живая анимация:</strong> непрерывная пульсация сфер в течение всей диктовки</li>
+          <li>🎙️ <strong>Разрешение микрофона (device:os.mic):</strong> открыт полный доступ к захвату голоса в Zepp OS</li>
+          <li>🔊 <strong>Пьезо-зуммер T-Rex 3 (@zos/sensor Buzzer):</strong> чёткий звуковой сигнал бипа на часах при старте и окончании записи</li>
+          <li>📳 <strong>Тактильная вибрация:</strong> отчётливый двойной вибро-отклик при нажатии физической кнопки SEL</li>
+          <li>🌊 <strong>Живая плавная анимация:</strong> оптимизированный рендеринг пульсирующих сфер (120мс) без фризов</li>
+          <li>🌐 <strong>Плеер голосов в браузере:</strong> рабочая ссылка из настроек Zepp на прослушивание всех 8 тембров</li>
         </ul>
       </div>
     </div>
