@@ -194,7 +194,7 @@
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
-      <div class="badge badge-app">Приложение • Voice Assistant v1.0.8</div>
+      <div class="badge badge-app">Приложение • Voice Assistant v1.0.9</div>
       <h2>Gemini Voice Assistant</h2>
       <div class="desc">Умный голосовой помощник на базе Google Gemini 2.0 Flash с распознаванием речи, звуковым подтверждением и голосовым озвучиванием.</div>
 
@@ -204,16 +204,16 @@
 
       <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
 
-      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.0.8)</a>
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.0.9)</a>
 
       <div class="features">
-        <strong>Особенности обновления v1.0.8:</strong>
+        <strong>Особенности обновления v1.0.9 (Анти-дребезг и аппаратные фиксы):</strong>
         <ul>
-          <li>⚡ <strong>Ручной режим записи:</strong> запуск записи только по кнопке SEL или тапу, без ложных автостартов</li>
-          <li>🌊 <strong>Живая анимация:</strong> гарантированное масштабирование сфер с сохранением координат и цвета</li>
-          <li>🔔 <strong>Звук MP3 и тактильная вибрация:</strong> ощутимая вибрация 600мс и воспроизведение звуковых сигналов из assets</li>
-          <li>🎙️ <strong>Превью голосов:</strong> встроенные аудиоплееры всех голосов на этой странице ниже</li>
-          <li>🔄 <strong>Бесшовное обновление:</strong> ставится прямо поверх с сохранением ключа API и настроек</li>
+          <li>🛡️ <strong>Анти-дребезг кнопки SEL:</strong> защита от двойного срабатывания onKey и запрет преждевременной остановки записи (<1.5с)</li>
+          <li>🎤 <strong>Мгновенный захват аудио:</strong> старт микрофона с нулевой миллисекунды записи без пропусков речи</li>
+          <li>🔔 <strong>Вшитые MP3-бипы:</strong> гарантированная упаковка beep_start.mp3 и beep_stop.mp3 в assets/common</li>
+          <li>📳 <strong>Универсальная вибрация:</strong> двойной вызов (@zos/sensor + hmSensor fallback) с мощным импульсом 600мс</li>
+          <li>🌊 <strong>Живая анимация:</strong> непрерывная пульсация сфер в течение всей диктовки</li>
         </ul>
       </div>
     </div>
