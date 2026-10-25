@@ -194,9 +194,9 @@
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
-      <div class="badge badge-app">Приложение • Voice Assistant v1.1.0</div>
+      <div class="badge badge-app">Приложение • Voice Assistant v1.1.1</div>
       <h2>Gemini Voice Assistant</h2>
-      <div class="desc">Умный голосовой помощник на базе Google Gemini 2.0 Flash с распознаванием речи, звуковыми сигналами зуммера T-Rex 3 и вибро-откликом.</div>
+      <div class="desc">Умный голосовой помощник на базе Google Gemini 2.0 Flash для Amazfit T-Rex 3 Pro с распознаванием речи, звуковым и вибро-откликом.</div>
 
       <div class="qr-box">
         <img src="gemini_qr.png" alt="Gemini Assistant QR Code">
@@ -204,16 +204,16 @@
 
       <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
 
-      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.1.0)</a>
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.1.1)</a>
 
       <div class="features">
-        <strong>Особенности обновления v1.1.0 (Аппаратный зуммер и фикс микрофона):</strong>
+        <strong>Особенности обновления v1.1.1 (Фикс файлового I/O микрофона):</strong>
         <ul>
-          <li>🎙️ <strong>Разрешение микрофона (device:os.mic):</strong> открыт полный доступ к захвату голоса в Zepp OS</li>
-          <li>🔊 <strong>Пьезо-зуммер T-Rex 3 (@zos/sensor Buzzer):</strong> чёткий звуковой сигнал бипа на часах при старте и окончании записи</li>
-          <li>📳 <strong>Тактильная вибрация:</strong> отчётливый двойной вибро-отклик при нажатии физической кнопки SEL</li>
-          <li>🌊 <strong>Живая плавная анимация:</strong> оптимизированный рендеринг пульсирующих сфер (120мс) без фризов</li>
-          <li>🌐 <strong>Плеер голосов в браузере:</strong> рабочая ссылка из настроек Zepp на прослушивание всех 8 тембров</li>
+          <li>🎙️ <strong>Нативный путь input.opus:</strong> отказ от data:// в пользу прямого пути к файлу в песочнице /data</li>
+          <li>📁 <strong>Авто-сканер readdirSync:</strong> обнаружение записанного аудиофайла и контроль флеш-буфера</li>
+          <li>🔄 <strong>Чистый инстанс Recorder:</strong> создание нового экземпляра create(id.RECORDER) на каждую сессию</li>
+          <li>🔊 <strong>Зуммер и динамик T-Rex 3 Pro:</strong> мгновенный бип и звуковое подтверждение старта и окончания</li>
+          <li>🌐 <strong>Плеер голосов:</strong> сэмплы всех 8 голосов в мобильном браузере</li>
         </ul>
       </div>
     </div>
