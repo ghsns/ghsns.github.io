@@ -3,127 +3,258 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amazfit T-Rex 3: Gemini Voice Assistant</title>
+  <title>Amazfit T-Rex 3 Pro: Проекты Zepp OS</title>
   <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #151d30;
+      --border: #23304a;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent-blue: #0284c7;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #10b981;
+    }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #0f172a;
-      color: #f8fafc;
+      background-color: var(--bg);
+      color: var(--text);
       margin: 0;
-      padding: 30px 20px;
+      padding: 30px 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
     }
-    .card {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 16px;
-      padding: 28px;
-      max-width: 480px;
-      width: 100%;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    .header {
       text-align: center;
-      box-sizing: border-box;
+      margin-bottom: 30px;
+      max-width: 700px;
     }
-    h1 {
-      margin-top: 0;
-      font-size: 24px;
-      color: #38bdf8;
+    .header h1 {
+      margin: 0 0 10px 0;
+      font-size: 28px;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+    .header p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+      max-width: 860px;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
     }
     .badge {
       display: inline-block;
       padding: 4px 12px;
-      background: #0284c7;
-      color: white;
       border-radius: 20px;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
     }
-    .qr-container {
-      background: white;
-      padding: 16px;
+    .badge-app {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .badge-watchface {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .card h2 {
+      margin: 0 0 8px 0;
+      font-size: 20px;
+      color: #ffffff;
+    }
+    .card .desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.5;
+      min-height: 40px;
+    }
+    .qr-box {
+      background: #ffffff;
+      padding: 12px;
       border-radius: 12px;
-      display: inline-block;
-      margin: 15px 0;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      margin-bottom: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     }
-    .qr-container img {
+    .qr-box img {
       display: block;
-      width: 240px;
-      height: 240px;
+      width: 200px;
+      height: 200px;
     }
-    .uri-box {
-      background: #0f172a;
-      padding: 10px 14px;
-      border-radius: 8px;
+    .uri-code {
+      background: #0b0f19;
+      border: 1px dashed var(--border);
+      padding: 8px 12px;
+      border-radius: 6px;
       font-family: monospace;
-      font-size: 13px;
-      color: #38bdf8;
+      font-size: 12px;
+      color: var(--accent-cyan);
       word-break: break-all;
-      margin: 15px 0;
-      border: 1px dashed #0284c7;
+      margin-bottom: 16px;
+      width: 100%;
+      box-sizing: border-box;
     }
     .btn {
       display: inline-block;
-      background: #0284c7;
-      color: white;
+      background: var(--accent-blue);
+      color: #ffffff;
       text-decoration: none;
-      padding: 12px 24px;
+      padding: 10px 20px;
       border-radius: 8px;
+      font-size: 14px;
       font-weight: 600;
-      margin-top: 10px;
       transition: background 0.2s;
+      width: 100%;
+      box-sizing: border-box;
     }
     .btn:hover {
       background: #0369a1;
     }
-    .steps {
+    .features {
       text-align: left;
-      margin-top: 25px;
-      padding-top: 20px;
-      border-top: 1px solid #334155;
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      width: 100%;
+      line-height: 1.5;
+    }
+    .features ul {
+      margin: 4px 0 0 0;
+      padding-left: 18px;
+    }
+    .features li {
+      margin-bottom: 4px;
+    }
+    .guide-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      max-width: 860px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .guide-card h3 {
+      margin-top: 0;
+      color: var(--accent-cyan);
+      font-size: 18px;
+    }
+    .guide-card ol {
+      margin: 0;
+      padding-left: 20px;
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.7;
       color: #cbd5e1;
     }
-    .steps ol {
-      padding-left: 20px;
-      margin: 10px 0;
+    .guide-card li {
+      margin-bottom: 6px;
     }
-    .steps li {
-      margin-bottom: 8px;
+    .guide-card code {
+      background: #0b0f19;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--accent-cyan);
+      font-family: monospace;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="badge">Amazfit T-Rex 3 Pro (RockyW)</div>
-    <h1>Gemini Voice Assistant</h1>
-    <p>Умный голосовой помощник на базе Google Gemini 2.0 Flash для Zepp OS 3.x+</p>
-    
-    <div class="qr-container">
-      <img src="gemini_qr.png" alt="QR Code for Sideload">
+
+  <div class="header">
+    <h1>Amazfit T-Rex 3 Pro (RockyW)</h1>
+    <p>Репозиторий проектов пользователя ghsns для Zepp OS 3.x+</p>
+  </div>
+
+  <div class="grid">
+    <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
+    <div class="card">
+      <div class="badge badge-app">Приложение • Voice Assistant</div>
+      <h2>Gemini Voice Assistant</h2>
+      <div class="desc">Умный голосовой помощник на базе Google Gemini 2.0 Flash с распознаванием речи и голосовым озвучиванием (TTS).</div>
+
+      <div class="qr-box">
+        <img src="gemini_qr.png" alt="Gemini Assistant QR Code">
+      </div>
+
+      <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
+
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (19 КБ)</a>
+
+      <div class="features">
+        <strong>Особенности:</strong>
+        <ul>
+          <li>Мгновенный запуск по удержанию физической кнопки SEL</li>
+          <li>Запись через микрофон (@zos/media RECORDER, OPUS)</li>
+          <li>Прямой опрос Google Gemini API (модель 2.0 Flash)</li>
+          <li>Озвучивание ответа через динамик часов (TTS)</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="uri-box">
-      zpkd1://ghsns.github.io/gemini_assistant.zpk
-    </div>
+    <!-- КАРТОЧКА 2: МОДИФИЦИРОВАННЫЙ ЦИФЕРБЛАТ MODULAR WELLNESS -->
+    <div class="card">
+      <div class="badge badge-watchface">Циферблат • Watchface</div>
+      <h2>Modular Wellness (Fix)</h2>
+      <div class="desc">Модифицированный модульный циферблат с исправлением барометра, расширенными зонами тапов и скрытием батареи.</div>
 
-    <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk пакет напрямую</a>
+      <div class="qr-box">
+        <img src="modular_wellness_qr.png" alt="Modular Wellness QR Code">
+      </div>
 
-    <div class="steps">
-      <strong>Инструкция по установке:</strong>
-      <ol>
-        <li>Откройте приложение <strong>Zepp</strong> на смартфоне.</li>
-        <li>Перейдите: <em>Профиль &rarr; Настройки &rarr; О программе</em> и нажмите 7 раз на логотип Zepp для включения режима разработчика.</li>
-        <li>В меню профиля откройте появившийся пункт <strong>«Режим разработчика»</strong>.</li>
-        <li>Нажмите на значок сканера QR-кода в правом верхнем углу и отсканируйте код выше.</li>
-        <li>Пакет установится на часы Amazfit T-Rex 3 автоматически.</li>
-      </ol>
+      <div class="uri-code">zpkd1://ghsns.github.io/modular_wellness_mod.zpk</div>
+
+      <a href="modular_wellness_mod.zpk" class="btn" download>📥 Скачать .zpk (943 КБ)</a>
+
+      <div class="features">
+        <strong>Исправления и улучшения:</strong>
+        <ul>
+          <li>Фикс барометра: hmSensor.id.BARO (гПа &rarr; мм рт. ст.)</li>
+          <li>Расширенная зона верхней батареи 150&times;68px для безеля T-Rex 3</li>
+          <li>Скрытие батареи циферблата при &le;10% от системного наложения</li>
+          <li>7 тактических двухтональных палитр Garmin Style</li>
+          <li>Интерактивные тапы во всех слотах с приоритетным Z-Index</li>
+        </ul>
+      </div>
     </div>
   </div>
+
+  <div class="guide-card">
+    <h3>Инструкция по установке через приложение Zepp:</h3>
+    <ol>
+      <li>Откройте приложение <strong>Zepp</strong> на смартфоне.</li>
+      <li>Перейдите: <code>Профиль</code> &rarr; <code>Настройки</code> &rarr; <code>О программе</code>.</li>
+      <li>Нажмите <strong>7 раз подряд</strong> на круглый логотип Zepp (появится сообщение <em>«Режим разработчика включен»</em>).</li>
+      <li>Вернитесь в меню <code>Профиль</code> и откройте пункт <strong>«Режим разработчика»</strong>.</li>
+      <li>Нажмите на <strong>значок сканера QR-кода</strong> в правом верхнем углу и отсканируйте QR-код нужного проекта.</li>
+      <li>Пакет скомпилирован в режиме <code>preview</code> и установится на ваши часы без ошибок!</li>
+    </ol>
+  </div>
+
 </body>
 </html>
