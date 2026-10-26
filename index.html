@@ -194,9 +194,9 @@
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
-      <div class="badge badge-app">Приложение • Voice Assistant v1.1.1</div>
+      <div class="badge badge-app">Приложение • Voice Assistant v1.2.0</div>
       <h2>Gemini Voice Assistant</h2>
-      <div class="desc">Умный голосовой помощник на базе Google Gemini 2.0 Flash для Amazfit T-Rex 3 Pro с распознаванием речи, звуковым и вибро-откликом.</div>
+      <div class="desc">Голосовой помощник на базе Google Gemini для Amazfit T-Rex 3 Pro: запись с микрофона, ответ голосом через динамик часов и текст на экране.</div>
 
       <div class="qr-box">
         <img src="gemini_qr.png" alt="Gemini Assistant QR Code">
@@ -204,16 +204,17 @@
 
       <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
 
-      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.1.1)</a>
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.0)</a>
 
       <div class="features">
-        <strong>Особенности обновления v1.1.1 (Фикс файлового I/O микрофона):</strong>
+        <strong>Что нового в v1.2.0:</strong>
         <ul>
-          <li>🎙️ <strong>Нативный путь input.opus:</strong> отказ от data:// в пользу прямого пути к файлу в песочнице /data</li>
-          <li>📁 <strong>Авто-сканер readdirSync:</strong> обнаружение записанного аудиофайла и контроль флеш-буфера</li>
-          <li>🔄 <strong>Чистый инстанс Recorder:</strong> создание нового экземпляра create(id.RECORDER) на каждую сессию</li>
-          <li>🔊 <strong>Зуммер и динамик T-Rex 3 Pro:</strong> мгновенный бип и звуковое подтверждение старта и окончания</li>
-          <li>🌐 <strong>Плеер голосов:</strong> сэмплы всех 8 голосов в мобильном браузере</li>
+          <li>🔊 <strong>Озвучка ответов:</strong> Gemini отвечает голосом через динамик часов (MP3, русский язык)</li>
+          <li>🎙️ <strong>Надёжная запись:</strong> повторные попытки захвата микрофона и ожидание записи файла</li>
+          <li>🚀 <strong>Автозапись:</strong> запрос начинается сразу при открытии приложения (отключается в настройках)</li>
+          <li>🧠 <strong>Каскад моделей:</strong> при 503/429/404 автоматически пробуются резервные модели Gemini</li>
+          <li>⚠️ <strong>Понятные ошибки:</strong> отдельные сообщения для ключа, квоты, перегрузки и сети</li>
+          <li>🛠️ <strong>Диагностика:</strong> живой лог оборудования часов в настройках Zepp</li>
         </ul>
       </div>
     </div>
@@ -246,84 +247,11 @@
   </div>
 
   <div class="guide-card" id="voices" style="margin-top: 24px;">
-    <h3>🎙️ Примеры звучания голосов Gemini и Edge TTS</h3>
-    <p style="color: var(--text-muted); font-size: 14px; margin-top: 4px; margin-bottom: 16px;">
-      В мобильном приложении Zepp нет встроенного аудиоплеера. Вы можете прямо здесь прослушать любой из доступных голосов и выбрать понравившийся для настроек:
+    <h3>🎙️ Озвучка ответов</h3>
+    <p style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">
+      Начиная с v1.2.0 ассистент озвучивает ответ прямо в динамике часов. Синтез речи выполняется на телефоне
+      и передаётся на часы компактным MP3-файлом — отдельный плеер в приложении Zepp не нужен.
     </p>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;">
-      <!-- Светлана -->
-      <div style="background: #0f172a; padding: 14px; border-radius: 12px; border: 1px solid #1e293b;">
-        <div style="font-weight: bold; color: #38bdf8; font-size: 15px;">Светлана (Женский)</div>
-        <div style="font-size: 12px; color: #94a3b8; margin-bottom: 8px;">Edge TTS • Естественный русский голос</div>
-        <audio controls preload="none" style="width: 100%; height: 36px;">
-          <source src="voices/ru-RU-SvetlanaNeural.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-
-      <!-- Дмитрий -->
-      <div style="background: #0f172a; padding: 14px; border-radius: 12px; border: 1px solid #1e293b;">
-        <div style="font-weight: bold; color: #38bdf8; font-size: 15px;">Дмитрий (Мужской)</div>
-        <div style="font-size: 12px; color: #94a3b8; margin-bottom: 8px;">Edge TTS • Естественный русский голос</div>
-        <audio controls preload="none" style="width: 100%; height: 36px;">
-          <source src="voices/ru-RU-DmitryNeural.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-
-      <!-- Puck -->
-      <div style="background: #0f172a; padding: 14px; border-radius: 12px; border: 1px solid #1e293b;">
-        <div style="font-weight: bold; color: #10b981; font-size: 15px;">Gemini Puck (Мужской)</div>
-        <div style="font-size: 12px; color: #94a3b8; margin-bottom: 8px;">Бодрый, энергичный тембр</div>
-        <audio controls preload="none" style="width: 100%; height: 36px;">
-          <source src="voices/Puck.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-
-      <!-- Charon -->
-      <div style="background: #0f172a; padding: 14px; border-radius: 12px; border: 1px solid #1e293b;">
-        <div style="font-weight: bold; color: #10b981; font-size: 15px;">Gemini Charon (Мужской)</div>
-        <div style="font-size: 12px; color: #94a3b8; margin-bottom: 8px;">Глубокий, спокойный тембр</div>
-        <audio controls preload="none" style="width: 100%; height: 36px;">
-          <source src="voices/Charon.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-
-      <!-- Kore -->
-      <div style="background: #0f172a; padding: 14px; border-radius: 12px; border: 1px solid #1e293b;">
-        <div style="font-weight: bold; color: #f472b6; font-size: 15px;">Gemini Kore (Женский)</div>
-        <div style="font-size: 12px; color: #94a3b8; margin-bottom: 8px;">Теплый, мягкий тон</div>
-        <audio controls preload="none" style="width: 100%; height: 36px;">
-          <source src="voices/Kore.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-
-      <!-- Aoede -->
-      <div style="background: #0f172a; padding: 14px; border-radius: 12px; border: 1px solid #1e293b;">
-        <div style="font-weight: bold; color: #f472b6; font-size: 15px;">Gemini Aoede (Женский)</div>
-        <div style="font-size: 12px; color: #94a3b8; margin-bottom: 8px;">Выразительный, плавный</div>
-        <audio controls preload="none" style="width: 100%; height: 36px;">
-          <source src="voices/Aoede.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-
-      <!-- Fenrir -->
-      <div style="background: #0f172a; padding: 14px; border-radius: 12px; border: 1px solid #1e293b;">
-        <div style="font-weight: bold; color: #10b981; font-size: 15px;">Gemini Fenrir (Мужской)</div>
-        <div style="font-size: 12px; color: #94a3b8; margin-bottom: 8px;">Уверенный, четкий</div>
-        <audio controls preload="none" style="width: 100%; height: 36px;">
-          <source src="voices/Fenrir.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-
-      <!-- Zephyr -->
-      <div style="background: #0f172a; padding: 14px; border-radius: 12px; border: 1px solid #1e293b;">
-        <div style="font-weight: bold; color: #f472b6; font-size: 15px;">Gemini Zephyr (Женский)</div>
-        <div style="font-size: 12px; color: #94a3b8; margin-bottom: 8px;">Дружелюбный, приятный</div>
-        <audio controls preload="none" style="width: 100%; height: 36px;">
-          <source src="voices/Zephyr.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-    </div>
   </div>
 
   <div class="guide-card" style="margin-top: 24px;">
