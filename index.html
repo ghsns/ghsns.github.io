@@ -194,7 +194,7 @@
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
-      <div class="badge badge-app">Приложение • Voice Assistant v1.2.15</div>
+      <div class="badge badge-app">Приложение • Voice Assistant v1.2.16</div>
       <h2>Gemini Voice Assistant</h2>
       <div class="desc">Голосовой помощник на базе Google Gemini для Amazfit T-Rex 3 Pro: запись с микрофона, ответ голосом через динамик часов и текст на экране.</div>
 
@@ -204,10 +204,15 @@
 
       <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
 
-      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.15)</a>
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.16)</a>
 
       <div class="features">
-        <strong>Что нового в v1.2.15:</strong>
+        <strong>Что нового в v1.2.16:</strong>
+        <ul>
+          <li>🔒 <strong>«Только Groq» — это только Groq:</strong> если ключ не задан, неверен или Groq временно на паузе после ошибки, приложение покажет понятную причину, а не тихо ответит через Gemini</li>
+          <li>🧭 <strong>Диагностика режима:</strong> в логе конфига видно выбранный режим и есть ли ключ Groq</li>
+        </ul>
+        <strong>Из v1.2.15:</strong>
         <ul>
           <li>🔊 <strong>Починен звук:</strong> ускорение речи на 24 кГц давало «тихий» MP3 — теперь звук ресемплируется в 22,05 кГц и проверяется по уровню сигнала перед отправкой на часы</li>
           <li>🛡 <strong>Без тишины:</strong> если ускорение почему-то не удалось, на часы уходит оригинальная озвучка Google TTS</li>
