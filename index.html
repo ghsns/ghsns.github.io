@@ -194,7 +194,7 @@
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
-      <div class="badge badge-app">Приложение • Voice Assistant v1.2.17</div>
+      <div class="badge badge-app">Приложение • Voice Assistant v1.2.18</div>
       <h2>Gemini Voice Assistant</h2>
       <div class="desc">Голосовой помощник на базе Google Gemini для Amazfit T-Rex 3 Pro: запись с микрофона, ответ голосом через динамик часов и текст на экране.</div>
 
@@ -204,10 +204,18 @@
 
       <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
 
-      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.17)</a>
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.18)</a>
 
       <div class="features">
-        <strong>Что нового в v1.2.17:</strong>
+        <strong>Что нового в v1.2.18:</strong>
+        <ul>
+          <li>✂️ <strong>Разбивка по предложениям:</strong> части больше не режутся посередине фразы, нумерация списков убрана — больше нет частей из одной цифры «1»</li>
+          <li>♾ <strong>Без лимита 12 частей:</strong> длинный ответ озвучивается целиком, ничего не обрезается</li>
+          <li>🛡 <strong>Очередь не зависает:</strong> повтор запроса части, идемпотентный номер части и сторож на 20 с, если плеер не прислал COMPLETE</li>
+          <li>⚡ <strong>Быстрее:</strong> ускорение речи в 5 раз быстрее, лог не отбирает BLE во время звука, Groq прогревается пока вы говорите</li>
+          <li>🎚 <strong>Скорость 1.7 и 1.8:</strong> между «медленно» (1.5) и «быстро» (2.0), по умолчанию 1.8</li>
+        </ul>
+        <strong>Из v1.2.17:</strong>
         <ul>
           <li>📝 <strong>Groq больше не обрезает ответ:</strong> убран жёсткий лимит «не более 20 слов», бюджет токенов увеличен до 1024/2048, для reasoning-моделей включён низкий уровень размышлений</li>
           <li>🔁 <strong>Защита от обрыва:</strong> если Groq всё же остановился по лимиту токенов (<code>finish=length</code>), запрос автоматически повторяется с большим бюджетом; если и это не помогло — понятная ошибка вместо «Создайте в»</li>
