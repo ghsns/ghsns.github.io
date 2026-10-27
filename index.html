@@ -259,7 +259,7 @@
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
-      <div class="badge badge-app">Приложение • Voice Assistant v1.2.60</div>
+      <div class="badge badge-app">Приложение • Voice Assistant v1.2.62</div>
       <h2>Gemini Voice Assistant</h2>
       <div class="desc">Голосовой помощник на базе Google Gemini для Amazfit T-Rex 3 Pro: запись с микрофона, ответ голосом через динамик часов и текст на экране.</div>
 
@@ -269,10 +269,15 @@
 
       <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
 
-      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.60)</a>
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.62)</a>
 
       <div class="features">
-        <strong>Что нового в v1.2.60:</strong>
+        <strong>Что нового в v1.2.62:</strong>
+        <ul>
+          <li>📳 <strong>Ровно два вибро в конце записи:</strong> раньше срабатывало четыре — каждый вызов вибрации стартовал её несколько раз. Теперь один старт на импульс</li>
+          <li>🎙️ <strong>Стриминг первого предложения:</strong> телефон отдаёт первую фразу сразу, как модель её дописала, — текст и голос приходят раньше. Если мост Zepp не поддерживает поток, всё работает как раньше</li>
+        </ul>
+        <strong>Из v1.2.60:</strong>
         <ul>
           <li>🔕 <strong>Конец записи без звука:</strong> убран тройной писк; остались только два коротких вибро-импульса</li>
         </ul>
