@@ -151,6 +151,65 @@
     .features li {
       margin-bottom: 4px;
     }
+    .tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 18px;
+      width: 100%;
+      max-width: 860px;
+    }
+    .tab {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text-muted);
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .tab:hover {
+      color: var(--text);
+      border-color: var(--accent-cyan);
+    }
+    .tab.active {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      color: #ffffff;
+    }
+    .tab-panel {
+      display: none;
+      width: 100%;
+    }
+    .tab-panel.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .tab-panel .grid {
+      max-width: 560px;
+    }
+    .history {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .history summary {
+      cursor: pointer;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      padding: 6px 0;
+      outline: none;
+    }
+    .history summary:hover {
+      text-decoration: underline;
+    }
+    .history[open] summary {
+      margin-bottom: 6px;
+    }
     .guide-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -191,6 +250,12 @@
     <p>Репозиторий проектов пользователя ghsns для Zepp OS 3.x+</p>
   </div>
 
+  <div class="tabs" role="tablist" aria-label="Проекты">
+    <button class="tab active" data-tab="assistant" role="tab" aria-selected="true">🎤 Голосовой помощник</button>
+    <button class="tab" data-tab="watchface" role="tab" aria-selected="false">⌚ Циферблат</button>
+  </div>
+
+  <section class="tab-panel active" id="tab-assistant">
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
@@ -213,6 +278,8 @@
           <li>🪐 <strong>У каждого шара своя орбита:</strong> четыре разных круга и четыре скорости, плавно и не быстро</li>
           <li>🔊 <strong>Ошибка связи голосом:</strong> «Ошибка связи с телефоном» + один автоматический повтор той же записи; при повторе — «Связь не установлена» и закрытие</li>
         </ul>
+        <details class="history">
+          <summary>История версий</summary>
         <strong>Из v1.2.53:</strong>
         <ul>
           <li>🫧 <strong>Шары больше не «половинки»:</strong> исправлен порядок слоёв — сонарные волны и растущее кольцо (сплошные тёмные диски) больше не перекрывают шары</li>
@@ -414,9 +481,22 @@
           <li>🗣 <strong>Голос ×2 и короче:</strong> озвучивается суть ответа, 32 кбит/с — файл на часы пишется в 2–4 раза быстрее</li>
           <li>⏱ <strong>Строка «[Этапы]»:</strong> видно, сколько заняли ответ, озвучка и обработка на телефоне</li>
         </ul>
+        </details>
       </div>
     </div>
+  </div>
 
+  <div class="guide-card" id="voices" style="margin-top: 24px;">
+    <h3>🎙️ Озвучка ответов</h3>
+    <p style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">
+      Начиная с v1.2.0 ассистент озвучивает ответ прямо в динамике часов. Синтез речи выполняется на телефоне
+      и передаётся на часы компактным MP3-файлом — отдельный плеер в приложении Zepp не нужен.
+    </p>
+  </div>
+  </section>
+
+  <section class="tab-panel" id="tab-watchface">
+  <div class="grid">
     <!-- КАРТОЧКА 2: МОДИФИЦИРОВАННЫЙ ЦИФЕРБЛАТ MODULAR WELLNESS -->
     <div class="card">
       <div class="badge badge-watchface">Циферблат • Watchface</div>
@@ -443,14 +523,7 @@
       </div>
     </div>
   </div>
-
-  <div class="guide-card" id="voices" style="margin-top: 24px;">
-    <h3>🎙️ Озвучка ответов</h3>
-    <p style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">
-      Начиная с v1.2.0 ассистент озвучивает ответ прямо в динамике часов. Синтез речи выполняется на телефоне
-      и передаётся на часы компактным MP3-файлом — отдельный плеер в приложении Zepp не нужен.
-    </p>
-  </div>
+  </section>
 
   <div class="guide-card" style="margin-top: 24px;">
     <h3>Инструкция по установке через приложение Zepp:</h3>
@@ -463,6 +536,33 @@
       <li>Пакет скомпилирован в режиме <code>preview</code> и установится на ваши часы без ошибок!</li>
     </ol>
   </div>
+  <script>
+    (function () {
+      var tabs = document.querySelectorAll('.tab');
+      var panels = document.querySelectorAll('.tab-panel');
+      function showTab(name) {
+        tabs.forEach(function (tab) {
+          var active = tab.getAttribute('data-tab') === name;
+          tab.classList.toggle('active', active);
+          tab.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        panels.forEach(function (panel) {
+          panel.classList.toggle('active', panel.id === 'tab-' + name);
+        });
+      }
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var name = tab.getAttribute('data-tab');
+          showTab(name);
+          if (window.history && window.history.replaceState) {
+            window.history.replaceState(null, '', name === 'assistant' ? '#' : '#' + name);
+          }
+        });
+      });
+      var hash = (window.location.hash || '').replace('#', '');
+      showTab(hash === 'watchface' ? 'watchface' : 'assistant');
+    })();
+  </script>
 
 </body>
 </html>
