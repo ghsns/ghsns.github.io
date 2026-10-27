@@ -209,6 +209,11 @@
       <div class="features">
         <strong>Что нового в v1.2.45:</strong>
         <ul>
+          <li>🪐 <strong>Орбита теперь видна:</strong> точки сделаны короткими дугами (<code>ARC</code>, 8–9°), потому что у <code>CIRCLE</code> через <code>prop.MORE</code> меняются только радиус и цвет — центр не двигался, и точки не летали</li>
+          <li>🚫 <strong>Дуга гарантированно скрыта вне записи:</strong> помимо <code>VISIBLE</code> выставляется нулевой сектор (0°/0°), даже если прошивка игнорирует видимость у <code>ARC</code></li>
+        </ul>
+        <strong>Из v1.2.44:</strong>
+        <ul>
           <li>🛟 <strong>Пауза Groq больше не даёт «нет ответа»:</strong> если Groq на паузе, а ключ Gemini есть, ответ приходит через Gemini (в логе <code>Groq на паузе N с → Gemini</code>); ошибка остаётся только когда Gemini-ключа нет</li>
         </ul>
         <strong>Из v1.2.43:</strong>
