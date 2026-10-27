@@ -194,7 +194,7 @@
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
-      <div class="badge badge-app">Приложение • Voice Assistant v1.2.41</div>
+      <div class="badge badge-app">Приложение • Voice Assistant v1.2.42</div>
       <h2>Gemini Voice Assistant</h2>
       <div class="desc">Голосовой помощник на базе Google Gemini для Amazfit T-Rex 3 Pro: запись с микрофона, ответ голосом через динамик часов и текст на экране.</div>
 
@@ -204,10 +204,17 @@
 
       <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
 
-      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.41)</a>
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.42)</a>
 
       <div class="features">
-        <strong>Что нового в v1.2.41:</strong>
+        <strong>Что нового в v1.2.42:</strong>
+        <ul>
+          <li>🎯 <strong>Центровка:</strong> кольца, ореолы, дуга и волны приведены к единому центру (240, 220) — раньше дуга и ореолы были смещены на 8 px вниз</li>
+          <li>🌀 <strong>Дуга только при записи:</strong> создаётся скрытой и появляется исключительно во время записи; в покое, при ожидании ответа и в режиме ответа её нет</li>
+          <li>🌊 <strong>Новые волны:</strong> во время записи от центра расходятся два «сонара», плавно растворяясь в фоне</li>
+          <li>🪐 <strong>Орбита вместо дуги при ожидании:</strong> по кругу движется точка, пока модель думает</li>
+        </ul>
+        <strong>Из v1.2.41:</strong>
         <ul>
           <li>⛔ <strong>Нажатие отменяет выход:</strong> если таймер тишины уже сработал и приложение собиралось закрыться, любое нажатие (SEL или кнопка на экране) отменяет выход и начинает запись</li>
           <li>👆 <strong>Заметный старт записи:</strong> двойная вибрация + сигнал, в логе <code>● ЗАПИСЬ НАЧАЛАСЬ — говорите</code></li>
