@@ -259,7 +259,7 @@
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
-      <div class="badge badge-app">Приложение • Voice Assistant v1.2.57</div>
+      <div class="badge badge-app">Приложение • Voice Assistant v1.2.58</div>
       <h2>Gemini Voice Assistant</h2>
       <div class="desc">Голосовой помощник на базе Google Gemini для Amazfit T-Rex 3 Pro: запись с микрофона, ответ голосом через динамик часов и текст на экране.</div>
 
@@ -269,12 +269,19 @@
 
       <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
 
-      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.57)</a>
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.58)</a>
 
       <div class="features">
-        <strong>Что нового в v1.2.57:</strong>
+        <strong>Что нового в v1.2.58:</strong>
         <ul>
-          <li>🔔 <strong>Короткие сигналы:</strong> старт — писк ~110 мс; конец — два коротких писка с паузой 200 мс; сигнал ошибки — 220 мс</li>
+          <li>🎵 <strong>Три быстрых писка с повышением тона</strong> в конце записи (A5 → C#6 → E6, ~0,35 с); старт остался одним коротким писком</li>
+          <li>⚡ <strong>«Связь не установлена» в 1,5 раза быстрее</strong> — темп сообщения ускорен без изменения тембра</li>
+          <li>⏱ <strong>Ответ успевает прийти:</strong> телефону дано 16 с, часам — 20 с (раньше 13/15 с, и ответ на 14-й секунде терялся)</li>
+          <li>🚀 <strong>Быстрее чтение записи:</strong> openSync/readSync первым, base64 без квадратичного склеивания — экономия ~1–1,5 с на отправке</li>
+        </ul>
+        <strong>Из v1.2.57:</strong>
+        <ul>
+          <li>🔔 <strong>Короткие сигналы:</strong> старт 110 мс, сигнал ошибки 220 мс</li>
         </ul>
         <strong>Из v1.2.56:</strong>
         <ul>
