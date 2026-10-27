@@ -194,7 +194,7 @@
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
-      <div class="badge badge-app">Приложение • Voice Assistant v1.2.34</div>
+      <div class="badge badge-app">Приложение • Voice Assistant v1.2.35</div>
       <h2>Gemini Voice Assistant</h2>
       <div class="desc">Голосовой помощник на базе Google Gemini для Amazfit T-Rex 3 Pro: запись с микрофона, ответ голосом через динамик часов и текст на экране.</div>
 
@@ -204,10 +204,16 @@
 
       <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
 
-      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.34)</a>
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.35)</a>
 
       <div class="features">
-        <strong>Что нового в v1.2.34:</strong>
+        <strong>Что нового в v1.2.35:</strong>
+        <ul>
+          <li>🎤 <strong>Запись останавливается отпусканием SEL</strong> даже если её начал автозапуск (раньше длинное удержание не давало CLICK и запись не заканчивалась)</li>
+          <li>🔊 <strong>Длинный ответ больше не глохнет:</strong> плеер не пересоздаётся (второй <code>create(PLAYER)</code> на T-Rex 3 Pro всегда возвращает null) — при сбое prepare повтор на том же объекте, ожидание увеличено до 2.5 с</li>
+          <li>🎚 <strong>Честный индикатор:</strong> «Тишина» больше не показывается, когда измерить уровень невозможно — всегда «Слушаю вас…» с живой анимацией</li>
+        </ul>
+        <strong>Из v1.2.34:</strong>
         <ul>
           <li>📱 <strong>Лог телефона в настройках:</strong> новый блок «Телефон: последняя попытка» показывает этапы companion — получен запрос, размер, stt/chat/tts, дедлайн, ошибку</li>
           <li>🔁 <strong>Повтор запроса через 8 с:</strong> если телефон не ответил (служба была выгружена системой), второй запрос будит её и обычно завершается; общий лимит 15 с сохранён</li>
