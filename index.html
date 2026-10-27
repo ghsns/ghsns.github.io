@@ -194,7 +194,7 @@
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
-      <div class="badge badge-app">Приложение • Voice Assistant v1.2.45</div>
+      <div class="badge badge-app">Приложение • Voice Assistant v1.2.46</div>
       <h2>Gemini Voice Assistant</h2>
       <div class="desc">Голосовой помощник на базе Google Gemini для Amazfit T-Rex 3 Pro: запись с микрофона, ответ голосом через динамик часов и текст на экране.</div>
 
@@ -204,10 +204,17 @@
 
       <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
 
-      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.45)</a>
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.46)</a>
 
       <div class="features">
-        <strong>Что нового в v1.2.45:</strong>
+        <strong>Что нового в v1.2.46:</strong>
+        <ul>
+          <li>⚡ <strong>Текст раньше звука:</strong> ответ приходит двумя фазами — сначала весь текст на экран, затем первая озвученная часть; текст появляется примерно на 1–1,5 с раньше</li>
+          <li>👆 <strong>Лестница толчков:</strong> если служба телефона спала и первый запрос терялся, <code>WARM_UP</code> повторяется на 0 / 1,5 / 3 / 6 с, а сам вопрос — на 3 и 6,5 с</li>
+          <li>♻️ <strong>Без двойной работы:</strong> повторный запрос с тем же <code>queryId</code> присоединяется к уже идущему STT+ответу, а не запускает его заново</li>
+          <li>🔊 <strong>Озвучка надёжнее:</strong> если проверка ускорения услышала тишину на 32 кбит/с, пробуется 48 кбит/с; в логе видны <code>checkPeak</code> и битрейт</li>
+        </ul>
+        <strong>Из v1.2.45:</strong>
         <ul>
           <li>🪐 <strong>Орбита теперь видна:</strong> точки сделаны короткими дугами (<code>ARC</code>, 8–9°), потому что у <code>CIRCLE</code> через <code>prop.MORE</code> меняются только радиус и цвет — центр не двигался, и точки не летали</li>
           <li>🚫 <strong>Дуга гарантированно скрыта вне записи:</strong> помимо <code>VISIBLE</code> выставляется нулевой сектор (0°/0°), даже если прошивка игнорирует видимость у <code>ARC</code></li>
