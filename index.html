@@ -194,7 +194,7 @@
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
-      <div class="badge badge-app">Приложение • Voice Assistant v1.2.14</div>
+      <div class="badge badge-app">Приложение • Voice Assistant v1.2.15</div>
       <h2>Gemini Voice Assistant</h2>
       <div class="desc">Голосовой помощник на базе Google Gemini для Amazfit T-Rex 3 Pro: запись с микрофона, ответ голосом через динамик часов и текст на экране.</div>
 
@@ -204,10 +204,16 @@
 
       <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
 
-      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.14)</a>
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.15)</a>
 
       <div class="features">
-        <strong>Что нового в v1.2.14:</strong>
+        <strong>Что нового в v1.2.15:</strong>
+        <ul>
+          <li>🔊 <strong>Починен звук:</strong> ускорение речи на 24 кГц давало «тихий» MP3 — теперь звук ресемплируется в 22,05 кГц и проверяется по уровню сигнала перед отправкой на часы</li>
+          <li>🛡 <strong>Без тишины:</strong> если ускорение почему-то не удалось, на часы уходит оригинальная озвучка Google TTS</li>
+          <li>🏷 <strong>Видно, кто ответил:</strong> статус показывает <code>ОТВЕТ GROQ</code> или <code>ОТВЕТ GEMINI</code>; заголовок приложения — нейтральный «AI АССИСТЕНТ»</li>
+        </ul>
+        <strong>Из v1.2.14:</strong>
         <ul>
           <li>📚 <strong>Длинные ответы без обрезки:</strong> текст приходит на часы частями, первая часть показывается и озвучивается сразу, остальные подгружаются параллельно</li>
           <li>⏱ <strong>Автозакрытие по тишине:</strong> приложение закрывается через 10/15/30/60 с после окончания озвучки (настраивается, можно отключить)</li>
