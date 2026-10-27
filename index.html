@@ -194,7 +194,7 @@
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
-      <div class="badge badge-app">Приложение • Voice Assistant v1.2.39</div>
+      <div class="badge badge-app">Приложение • Voice Assistant v1.2.40</div>
       <h2>Gemini Voice Assistant</h2>
       <div class="desc">Голосовой помощник на базе Google Gemini для Amazfit T-Rex 3 Pro: запись с микрофона, ответ голосом через динамик часов и текст на экране.</div>
 
@@ -204,10 +204,16 @@
 
       <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
 
-      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.39)</a>
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.40)</a>
 
       <div class="features">
-        <strong>Что нового в v1.2.39:</strong>
+        <strong>Что нового в v1.2.40:</strong>
+        <ul>
+          <li>🔑 <strong>PTT при запуске:</strong> прошивка присылает только <code>RELEASE</code> (8) — нажатие забирает система; теперь запись стартует после этого отпускания без ограничения по времени (раньше окно было 2,5 с, а удержание занимало 9 с)</li>
+          <li>⏳ <strong>Автозакрытие не мешает:</strong> пока первое нажатие не получено, окно ожидания в PTT-режиме — 30 с, и любой ключевой эвент сбрасывает таймер</li>
+          <li>🔢 <strong>Коды кнопки:</strong> реальные значения на прошивке — <code>press=16</code>, <code>release=8</code> (лог теперь печатает их при старте)</li>
+        </ul>
+        <strong>Из v1.2.39:</strong>
         <ul>
           <li>🔑 <strong>PTT заработал:</strong> прошивка не экспортирует константы <code>KEY_EVENT_PRESS/RELEASE</code> (в логе было <code>event=8</code>, а импорт — undefined). Теперь используются числовые коды 8/16 с фолбэком и в лог пишется <code>[Key] константы: …</code></li>
         </ul>
