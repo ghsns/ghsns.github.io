@@ -194,7 +194,7 @@
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
-      <div class="badge badge-app">Приложение • Voice Assistant v1.2.35</div>
+      <div class="badge badge-app">Приложение • Voice Assistant v1.2.36</div>
       <h2>Gemini Voice Assistant</h2>
       <div class="desc">Голосовой помощник на базе Google Gemini для Amazfit T-Rex 3 Pro: запись с микрофона, ответ голосом через динамик часов и текст на экране.</div>
 
@@ -204,10 +204,17 @@
 
       <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
 
-      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.35)</a>
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.36)</a>
 
       <div class="features">
-        <strong>Что нового в v1.2.35:</strong>
+        <strong>Что нового в v1.2.36:</strong>
+        <ul>
+          <li>🎤 <strong>Режим записи в настройках:</strong> «Удержание SEL (PTT)» или «Автостарт» с длительностью 3–10 с; при автостарте после ответа цикл повторяется, при нераспознанной речи приложение закрывается</li>
+          <li>👆 <strong>Отпускание SEL останавливает запись</strong> всегда — в том числе если запись начал автостарт; события кнопки пишутся в лог (<code>[Key] SEL event=…</code>)</li>
+          <li>✨ <strong>Новый визуал:</strong> заголовок «Голосовой помощник», дышащие ореолы фона, вращающаяся дуга, подсветка кнопки-приглашения, фазовые подписи («Отправляю запись…», «Модель размышляет…», «Готовлю ответ…», «Готовлю голос…»)</li>
+          <li>🔔 <strong>Другие сигналы:</strong> старт — мягкий REMIND_1, конец записи — REMIND_2</li>
+        </ul>
+        <strong>Из v1.2.35:</strong>
         <ul>
           <li>🎤 <strong>Запись останавливается отпусканием SEL</strong> даже если её начал автозапуск (раньше длинное удержание не давало CLICK и запись не заканчивалась)</li>
           <li>🔊 <strong>Длинный ответ больше не глохнет:</strong> плеер не пересоздаётся (второй <code>create(PLAYER)</code> на T-Rex 3 Pro всегда возвращает null) — при сбое prepare повтор на том же объекте, ожидание увеличено до 2.5 с</li>
