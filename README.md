@@ -1,6 +1,8 @@
-# Gemini Assistant для Amazfit T-Rex 3 Pro
+# Gemini Assistant для Amazfit (круглый экран, Zepp OS 3+)
 
-Голосовой помощник для часов Amazfit T-Rex 3 / T-Rex 3 Pro на Zepp OS 3.x: вы задаёте вопрос голосом, часы показывают ответ текстом и читают его вслух. Работает через Google Gemini или Groq.
+Голосовой помощник для Amazfit с круглым экраном на Zepp OS 3+: вы задаёте вопрос голосом, часы показывают ответ текстом и читают его вслух. Работает через Google Gemini или Groq.
+
+**Поддерживаемые модели:** T-Rex 3 Pro (48 мм и 44 мм), T-Rex 3, T-Rex Ultra, T-Rex Ultra 2, Balance, Balance 2, Balance 3, Balance Ultra, Cheetah Pro, Cheetah 2 Pro, Cheetah 2 Ultra, GTR 4, Active 2 (Round), Active 3 Premium. Нужны часы с микрофоном — квадратные GTS/Bip и Cheetah (Round) без микрофона не подойдут.
 
 [English version →](README.en.md)
 
