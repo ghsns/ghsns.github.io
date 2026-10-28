@@ -18,6 +18,8 @@ Important:
 - Route the **Zepp app traffic** through the VPN: most VPNs call this "split tunneling" / per-app routing — add Zepp to the list. Full tunnel also works but is not required.
 - If the VPN does not route Zepp, the assistant shows "Service is unavailable" and says it aloud.
 
+> **If the settings page in Zepp is black** — in most cases the VPN is off or Zepp traffic does not go through it. Turn on the VPN, add Zepp to the per-app list (or use full tunnel), fully close Zepp and open the settings again.
+
 ### 2. You need your own API keys
 
 The assistant cannot send a request without a key. The keys are free, but you have to get them yourself:
