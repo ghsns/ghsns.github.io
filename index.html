@@ -259,7 +259,7 @@
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
-      <div class="badge badge-app">Приложение • Voice Assistant v1.2.70</div>
+      <div class="badge badge-app">Приложение • Voice Assistant v1.2.71</div>
       <h2>Gemini Voice Assistant</h2>
       <div class="desc">Голосовой помощник на базе Google Gemini для Amazfit T-Rex 3 Pro: запись с микрофона, ответ голосом через динамик часов и текст на экране.</div>
 
@@ -269,10 +269,17 @@
 
       <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
 
-      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.70)</a>
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.71)</a>
 
       <div class="features">
-        <strong>Что нового в v1.2.70:</strong>
+        <strong>Что нового в v1.2.71:</strong>
+        <ul>
+          <li>🎯 <strong>Выбранная модель идёт первой:</strong> если в настройках выбрана 3.8 Flash (или другая не-дефолтная модель), телефон пробует именно её, а 3.1 Lite остаётся быстрым запасным вариантом</li>
+          <li>⏱️ <strong>Зависший поток больше не съедает весь бюджет:</strong> чтение SSE ограничено 6 секундами тишины (раньше тело ответа могло «висеть» 13.7 с, и на запасную модель уже не оставалось времени)</li>
+          <li>🔁 <strong>Больше шансов на второй модели:</strong> каскад переходит к следующей, если осталось ≥3.5 с, а не ≥5 с</li>
+          <li>🧾 <strong>В журнале видно порядок:</strong> «Model plan: … (user choice first)» или «(fast default first)»</li>
+        </ul>
+        <strong>Из v1.2.70:</strong>
         <ul>
           <li>🔊 <strong>Офлайн-ответ голосом:</strong> если в приложении Zepp нет интернета или домен Gemini заблокирован, часы говорят «Сервис недоступен, проверьте интернет или VPN» вместо длинного экрана ошибки</li>
           <li>🏷️ <strong>Короткий экран:</strong> остаётся только одна подсказка «Нет доступа к сервису» и статус «НЕТ ДОСТУПА К СЕТИ»; подробности по-прежнему уходят в журнал</li>
