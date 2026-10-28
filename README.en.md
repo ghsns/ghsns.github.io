@@ -15,7 +15,7 @@ The Zepp app and the assistant call `generativelanguage.googleapis.com` (Google)
 Important:
 
 - The VPN must run **on the phone**, not only in the browser.
-- Use **"all apps" / full tunnel** mode so the Zepp app traffic also goes through the VPN.
+- Route the **Zepp app traffic** through the VPN: most VPNs call this "split tunneling" / per-app routing — add Zepp to the list. Full tunnel also works but is not required.
 - If the VPN does not route Zepp, the assistant shows "Service is unavailable" and says it aloud.
 
 ### 2. You need your own API keys
@@ -42,7 +42,6 @@ The settings page has step-by-step links: "How to get a Gemini key?" and "Where 
 - 🌐 **Russian and English** — choose the interface language in the settings or follow the watch automatically (`Auto`). English covers the settings, watch UI, model answers and voice cues.
 - 🔁 **Auto cycle** — after an answer the app starts the next recording by itself (when "Auto start" is on).
 - 🛡️ **Clear errors** — no internet/VPN: a short spoken hint; no phone connection: "Connection lost".
-- 📋 **Log** — watch and phone logs in the settings, copyable to the clipboard. Helps to see where the delay is.
 
 ## Settings screenshots
 
@@ -52,11 +51,12 @@ The settings page has step-by-step links: "How to get a Gemini key?" and "Where 
 
 ## Installation
 
-1. Download the package: **[gemini_assistant.zpk](https://ghsns.github.io/gemini_assistant.zpk)**.
-2. Enable developer mode in the Zepp app: **Profile → Settings → About**, tap the Zepp logo 7 times.
-3. Open **Profile → Developer mode → QR scanner**.
-4. Scan the QR code on the [project page](https://ghsns.github.io/) or install the downloaded `.zpk` manually.
-5. Open the app settings in Zepp and paste your API keys.
+Downloading the package is optional — the easiest path is to scan the QR code.
+
+1. Enable developer mode in the Zepp app: **Profile → Settings → About**, tap the Zepp logo 7 times.
+2. Open **Profile → Developer mode → QR scanner** and scan the QR code on the [project page](https://ghsns.github.io/).
+3. If QR is not convenient, download [gemini_assistant.zpk](https://ghsns.github.io/gemini_assistant.zpk) and install it through the same developer mode manually.
+4. Open the app settings in Zepp and paste your API keys.
 
 The package is built in `preview` mode — this is normal for installation through Zepp.
 

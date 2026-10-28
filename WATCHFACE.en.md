@@ -15,13 +15,12 @@ A modified round watchface for Zepp OS 3.x. Based on the open **Modular Watchfac
 ## Features
 
 - 🕐 **Large time** in the centre with tidy progress rings around it.
-- 🌤 **Weather, UV index, sunrise/sunset** in the top slots.
-- 🌡 **Barometer** — `hmSensor.id.BARO`, pressure converted from hPa to mmHg.
+- 🧩 **Configurable slots** — choose which plugins to show: weather, UV index, sunrise/sunset, pressure, heart rate, sleep, PAI and more.
+- 🌡 **Barometer** — pressure converted from hPa to mmHg.
 - ❤️ **Heart rate, steps, sleep, PAI** — slots and side scales.
 - 🔋 **Top battery** — hidden at ≤10% so it does not duplicate the system badge.
 - 👆 **Interactive taps** — Sun and Moon open TideScreen / Sun & Moon; tap zones are enlarged for the T-Rex 3 bezel.
 - 🎨 **7 two-tone Garmin-style palettes**: blue, green, sand, orange, red, yellow and monochrome.
-- 🧭 **Z-Index** — buttons and taps stay above background layers, no accidental overlaps.
 
 ## Installation
 
@@ -40,7 +39,6 @@ The watchface has seven themes. The screenshots above show blue, green and sand;
 - Larger top battery zone for the T-Rex 3 bezel.
 - Watchface battery hidden at ≤10%.
 - Added tactical palettes and Sun/Moon taps to TideScreen.
-- Fixed layer order (Z-Index) so buttons always stay on top.
 
 ## Links
 
