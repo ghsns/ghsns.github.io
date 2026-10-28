@@ -259,7 +259,7 @@
   <div class="grid">
     <!-- КАРТОЧКА 1: ГОЛОСОВОЙ АССИСТЕНТ GEMINI -->
     <div class="card">
-      <div class="badge badge-app">Приложение • Voice Assistant v1.2.68</div>
+      <div class="badge badge-app">Приложение • Voice Assistant v1.2.69</div>
       <h2>Gemini Voice Assistant</h2>
       <div class="desc">Голосовой помощник на базе Google Gemini для Amazfit T-Rex 3 Pro: запись с микрофона, ответ голосом через динамик часов и текст на экране.</div>
 
@@ -269,10 +269,16 @@
 
       <div class="uri-code">zpkd1://ghsns.github.io/gemini_assistant.zpk</div>
 
-      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.68)</a>
+      <a href="gemini_assistant.zpk" class="btn" download>📥 Скачать .zpk (v1.2.69)</a>
 
       <div class="features">
-        <strong>Что нового в v1.2.68:</strong>
+        <strong>Что нового в v1.2.69:</strong>
+        <ul>
+          <li>🧭 <strong>Одна точка управления озвучкой:</strong> получение части, конец воспроизведения, ответ телефона и сторож теперь ведут в один планировщик очереди — меньше веток, из которых можно «застрять на N/M»</li>
+          <li>⏱️ <strong>Один сторож вместо двух:</strong> 20 секунд без прогресса → один повтор, ещё 20 → аккуратное завершение с сохранением текста на экране</li>
+          <li>🛡️ <strong>Защита от гонок:</strong> таймеры и ответы прошлого ответа больше не могут сдвинуть очередь нового</li>
+        </ul>
+        <strong>Из v1.2.68:</strong>
         <ul>
           <li>⚡ <strong>Прогрев озвучки уже во время записи:</strong> соединение с сервисом TTS открывается с той же скоростью речи, что и реальный запрос, — первая фраза стартует раньше и не ждёт холодного TLS-рукопожатия</li>
           <li>🧹 <strong>Скорость TTS читается в одном месте:</strong> миграция на x1.8 и значение из настроек больше не дублируются в двух блоках кода</li>
